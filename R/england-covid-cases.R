@@ -1,3 +1,5 @@
+install.packages("httr")
+
 library(jsonlite)
 library(httr)
 library(dplyr)
