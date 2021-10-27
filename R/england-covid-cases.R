@@ -85,6 +85,6 @@ cases.England <- cases.England %>%
   #dplyr::arrange(desc(date)) %>% 
   dplyr::mutate(cases_07da = zoo::rollmean(daily.cases.reported, k = 7, align="left", fill = NA)) 
 
-write.csv(cases.England, file = "cases-England.csv")
+write.csv(cases.England, file = "data/cases-England.csv")
 
 usethis::create_package(path = "automatingCovidCases")
