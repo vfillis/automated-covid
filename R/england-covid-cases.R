@@ -89,4 +89,3 @@ cases.England <- cases.England %>%
 
 write.csv(cases.England, file = "data/cases-England.csv")
 
-usethis::create_package(path = "automatingCovidCases")
