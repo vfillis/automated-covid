@@ -77,15 +77,15 @@ print(report)
 #Rename columns for better distinction
 cases <- cases %>%
   rename(
-    daily.cases.reported = daily,
-    cumulative.cases.reported = cumulative
+    `Daily cases by date reported` = daily,
+    `Cumulative cases by date reported` = cumulative
   )
 
 cases.England <- subset(cases, cases$name == "England")
 
 cases.England <- cases.England %>%
   #dplyr::arrange(desc(date)) %>% 
-  dplyr::mutate(cases_07da = zoo::rollmean(daily.cases.reported, k = 7, align="left", fill = NA)) 
+  dplyr::mutate(`Seven-day average` = zoo::rollmean(daily.cases.reported, k = 7, align="left", fill = NA)) 
 
 write.csv(cases.England, file = "data/cases-England.csv")
 
