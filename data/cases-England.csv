@@ -1,4 +1,4 @@
-"","date","name","code","daily.cases.reported","cumulative.cases.reported","cases_07da"
+"","date","name","code","Daily cases by date reported","cumulative.cases.reported","Seven-day average"
 "1","2021-10-27","England","E92000001",37502,7564400,37668.4285714286
 "2","2021-10-26","England","E92000001",32280,7526898,38239.2857142857
 "3","2021-10-25","England","E92000001",33309,7494992,38872.4285714286
