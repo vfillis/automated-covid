@@ -85,7 +85,7 @@ cases.England <- subset(cases, cases$name == "England")
 
 cases.England <- cases.England %>%
   #dplyr::arrange(desc(date)) %>% 
-  dplyr::mutate(`Seven-day average` = zoo::rollmean(daily.cases.reported, k = 7, align="left", fill = NA)) 
+  dplyr::mutate(`Seven-day average` = zoo::rollmean(`Daily cases by date reported`, k = 7, align="left", fill = NA)) 
 
 write.csv(cases.England, file = "data/cases-England.csv")
 
