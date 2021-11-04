@@ -4,6 +4,6 @@ Script that pulls data from the government API to update a chart showing daily n
 
 The chart is created using Flourish. 
 
-Chart can be found [here](https://vfillis.github.io/automated-covid/). 
+Full story [here](https://vfillis.github.io/html/covid.html). 
 
-Data will be updated every day at 6am. 
+Data will be updated daily. 
