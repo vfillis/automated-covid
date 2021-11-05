@@ -158,8 +158,8 @@ query_structure <- list(
 )
 deaths.England <- get_paginated_data(query_filters, query_structure)
 list(
-  "Shape"                = dim(deathsEngland),
-  "Data (first 3 items)" = deathsEngland[0:3, 0:-1]
+  "Shape"                = dim(deaths.England),
+  "Data (first 3 items)" = deaths.England[0:3, 0:-1]
 ) -> report
 print(report)
 #Rename columns for better distinction
@@ -248,8 +248,8 @@ query_structure <- list(
 )
 healthcare.England <- get_paginated_data(query_filters, query_structure)
 list(
-  "Shape"                = dim(healthcareEngland),
-  "Data (first 3 items)" = healthcareEngland[0:3, 0:-1]
+  "Shape"                = dim(healthcare.England),
+  "Data (first 3 items)" = healthcare.England[0:3, 0:-1]
 ) -> report
 print(report)
 #Rename columns for better distinction
@@ -266,6 +266,3 @@ healthcare.England <- healthcare.England %>%
   dplyr::mutate(`Seven-day average hospital cases` = zoo::rollmean(`Daily people in hospital with coronavirus`, k = 7, align="left", fill = NA)) 
 
 write.csv(healthcare.England, file = "data/healthcare-England.csv")
-
-# Covid vaccinations in England 
-
