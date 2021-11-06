@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "0 3 * * *"
 
 jobs:
   generate-data:
