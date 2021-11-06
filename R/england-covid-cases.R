@@ -3,7 +3,6 @@ library(httr)
 library(dplyr)
 library(zoo)
 library(tidyr)
-library(purrr)
 library(lubridate)
 library(stringr)
 
