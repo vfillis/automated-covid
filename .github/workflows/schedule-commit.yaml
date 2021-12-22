@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "5 * * * *"
 
 jobs:
   generate-data:
@@ -73,6 +73,11 @@ jobs:
       - name: Generate data
         run: |
           source("R/case-rates-LAs.R")
+        shell: Rscript {0} 
+        
+      - name: Generate data
+        run: |
+          source("R/covid-DE.R")
         shell: Rscript {0} 
         
       - name: Commit files
