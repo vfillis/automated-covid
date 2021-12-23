@@ -77,7 +77,7 @@ jobs:
         
       - name: Generate data
         run: |
-          source("R/covid-DE.R")
+          source("R/corona-DE.R")
         shell: Rscript {0} 
         
       - name: Commit files
