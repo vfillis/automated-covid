@@ -52,6 +52,7 @@ write.csv(caserates.latest, file = "data/case-rates-latest.csv")
 comparison <- caserates[-c(1,2,4,5,7,8)]
 
 comparison <- comparison %>%
-  pivot_wider(names_from = Region, values_from = caserate)
+  pivot_wider(names_from = Region, values_from = caserate) %>%
+  arrange(desc(Meldedatum))
 
 write.csv(comparison, file = "data/comparison-data-LKs.csv")
