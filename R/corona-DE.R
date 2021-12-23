@@ -66,3 +66,13 @@ comparison <- comparison %>%
   arrange(desc(Meldedatum))
 
 write.csv(comparison, file = "data/comparison-data-LKs.csv")
+
+#Faelle in DE
+
+DE <- raw %>%
+  group_by(Meldedatum) %>%
+  summarise(`gemeldete Fallzahl des Tages` = sum(AnzahlFall)) %>%
+  mutate(`Laufender Tagesdurchschnitt der vergangenen 7 Tage` = rollmean(`gemeldete Fallzahl des Tages`,k=7, align = "right", fill = NA)) %>%
+  arrange(desc(Meldedatum))
+
+write.csv(DE, file = "data/cases-DE.csv")
