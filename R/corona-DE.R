@@ -49,6 +49,16 @@ caserates.latest <- caserates %>%
 
 write.csv(caserates.latest, file = "data/case-rates-latest.csv")
 
+#calculate 7 day average for panel
+cases.panel <- cases.sum.daily.all %>% 
+  group_by(IdLandkreis) %>%
+  arrange(desc(Meldedatum)) %>%
+  mutate(`Laufender Tagesdurchschnitt der vergangenen 7 Tage` = rollmean(sum.cases,k=7, align = "left", fill = NA)) %>%
+  rename(`gemeldete Fallzahl des Tages` = sum.cases)
+
+#export
+write.csv(cases.panel, file = "data/cases-panel.csv")
+
 comparison <- caserates[-c(1,2,4,5,7,8)]
 
 comparison <- comparison %>%
