@@ -56,6 +56,13 @@ cases.panel <- cases.sum.daily.all %>%
   mutate(`Laufender Tagesdurchschnitt der vergangenen 7 Tage` = rollmean(sum.cases,k=7, align = "left", fill = NA)) %>%
   rename(`gemeldete Fallzahl des Tages` = sum.cases)
 
+#only latest 3 months in panel 
+maxDate = max(cases.panel$Meldedatum)
+maxDate = as.Date(maxDate)
+minDate = maxDate - 92
+
+cases.panel.latest <- subset(cases.panel, cases.panel$Meldedatum >= minDate) 
+
 #export
 write.csv(cases.panel, file = "data/cases-panel.csv")
 
