@@ -64,7 +64,7 @@ minDate = maxDate - 92
 cases.panel.latest <- subset(cases.panel, cases.panel$Meldedatum >= minDate) 
 
 #export
-write.csv(cases.panel, file = "data/cases-panel.csv")
+write.csv(cases.panel.latest, file = "data/cases-panel.csv")
 
 comparison <- caserates[-c(1,2,4,5,7,8)]
 
